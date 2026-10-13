@@ -1,0 +1,73 @@
+.fondo-burbujas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Degradado de fondo sutil */
+.fondo-burbujas__gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201, 93, 128, 0.08), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(142, 142, 151, 0.1), transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #fafafb 100%);
+}
+
+.dark .fondo-burbujas__gradient {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(224, 127, 157, 0.06), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(142, 142, 151, 0.08), transparent 50%),
+    linear-gradient(180deg, #0f0f12 0%, #18181b 100%);
+}
+
+/* Burbujas individuales */
+.fondo-burbujas__bubble {
+  position: absolute;
+  bottom: -200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(201, 93, 128, 0.35),
+    rgba(201, 93, 128, 0.1) 60%,
+    transparent 100%
+  );
+  border: 1px solid rgba(201, 93, 128, 0.15);
+  backdrop-filter: blur(2px);
+  animation-name: subir;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.dark .fondo-burbujas__bubble {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(224, 127, 157, 0.3),
+    rgba(224, 127, 157, 0.08) 60%,
+    transparent 100%
+  );
+  border-color: rgba(224, 127, 157, 0.18);
+}
+
+/* Animación: sube desde abajo y vuelve a empezar */
+@keyframes subir {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.9);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(30px) scale(1);
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-20px) scale(0.95);
+  }
+}
+
+/* Respeta usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .fondo-burbujas__bubble {
+    animation: none;
+    opacity: 0.05 !important;
+  }
+}

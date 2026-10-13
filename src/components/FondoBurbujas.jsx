@@ -1,91 +1,35 @@
-import { useEffect, useMemo, useState } from 'react';
-import Particles, { initParticlesEngine } from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';
-
+import '../assets/styles/FondoBurbujas.css';
 
 const FondoBurbujas = () => {
-  const [init, setInit] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => setInit(true));
-  }, []);
-
-  useEffect(() => {
-    const checkDarkMode = () => {
-      setDarkMode(document.documentElement.classList.contains('dark'));
-    };
-
-    checkDarkMode();
-    const observer = new MutationObserver(checkDarkMode);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const options = useMemo(
-    () => ({
-      background: {
-        color: { value: darkMode ? '#17131C' : '#F8F5FA' },
-      },
-      fpsLimit: 60,
-      particles: {
-        color: { value: darkMode ? '#B99ACF' : '#C5A5D8' },
-        move: {
-          enable: true,
-          speed: 0.5,
-          direction: 'top',
-          outModes: { default: 'out' },
-        },
-        number: {
-          density: { enable: true, area: 800 },
-          value: darkMode ? 25 : 15,
-        },
-        opacity: {
-          value: darkMode ? 0.45 : 0.35,
-          animation: { enable: true, speed: 0.5, sync: false },
-        },
-        shape: { type: 'circle' },
-        size: {
-          value: { min: darkMode ? 25 : 15, max: darkMode ? 30 : 40 },
-          animation: { enable: true, speed: 1, sync: false },
-        },
-        bounce: {
-          horizontal: { value: 1 },
-          vertical: { value: 1 },
-        },
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: true, mode: 'bubble' },
-        },
-        modes: {
-          bubble: {
-            distance: 250,
-            size: 50,
-            duration: 2,
-            opacity: darkMode ? 0.9 : 0.75,
-          },
-        },
-      },
-      detectRetina: true,
-    }),
-    [darkMode]
-  );
-
-  if (!init) return null;
+  const burbujas = [
+    { size: 80, left: '5%',  delay: '0s',   duration: '18s', opacity: 0.15 },
+    { size: 120, left: '15%', delay: '2s',   duration: '22s', opacity: 0.12 },
+    { size: 60,  left: '28%', delay: '4s',   duration: '16s', opacity: 0.18 },
+    { size: 150, left: '40%', delay: '1s',   duration: '25s', opacity: 0.1 },
+    { size: 90,  left: '55%', delay: '3s',   duration: '20s', opacity: 0.14 },
+    { size: 70,  left: '68%', delay: '5s',   duration: '17s', opacity: 0.16 },
+    { size: 110, left: '78%', delay: '2.5s', duration: '23s', opacity: 0.12 },
+    { size: 95,  left: '90%', delay: '0.5s', duration: '19s', opacity: 0.15 },
+  ];
 
   return (
-    <Particles
-      id="tsparticles"
-      options={options}
-      className="absolute inset-0 -z-10"
-    />
+    <div className="fondo-burbujas" aria-hidden="true">
+      <div className="fondo-burbujas__gradient" />
+      {burbujas.map((b, i) => (
+        <span
+          key={i}
+          className="fondo-burbujas__bubble"
+          style={{
+            width: `${b.size}px`,
+            height: `${b.size}px`,
+            left: b.left,
+            animationDelay: b.delay,
+            animationDuration: b.duration,
+            opacity: b.opacity,
+          }}
+        />
+      ))}
+    </div>
   );
 };
 
