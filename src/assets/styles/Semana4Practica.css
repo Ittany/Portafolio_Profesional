@@ -1,0 +1,293 @@
+/* semana4*/
+.sem4p {
+  --blanco: #ffffff;
+  --negro: #0f0f12;
+  --plomo-100: #ececee;
+  --plomo-200: #d9d9dd;
+  --plomo-400: #8e8e97;
+  --plomo-600: #4a4a52;
+  --rosa-100: #fbe4ea;
+  --rosa-300: #eea8bc;
+  --rosa-500: #c95d80;
+
+  --texto-fuerte: #0f0f12;
+  --texto-suave: #6b6b74;
+  --texto-muted: #8e8e97;
+  --superficie: #ffffff;
+  --superficie-2: #f7f7f8;
+  --borde: #e5e5e8;
+
+  min-height: 100vh;
+  padding: 6rem 1rem 4rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--texto-fuerte);
+}
+
+.dark .sem4p {
+  --texto-fuerte: #f4f4f5;
+  --texto-suave: #a1a1aa;
+  --texto-muted: #71717a;
+  --superficie: #18181b;
+  --superficie-2: #1f1f23;
+  --borde: #2a2a30;
+}
+
+.sem4p-container {
+  max-width: 68rem;
+  margin: 0 auto;
+}
+
+.sem4p-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.sem4p-back:hover { color: var(--rosa-500); }
+
+.sem4p-header { margin-bottom: 2.5rem; }
+
+.sem4p-eyebrow {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--texto-muted);
+}
+
+.sem4p-title {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--texto-fuerte);
+}
+@media (min-width: 640px) { .sem4p-title { font-size: 2.5rem; } }
+@media (min-width: 1024px) { .sem4p-title { font-size: 3rem; } }
+
+.sem4p-subtitle {
+  max-width: 42rem;
+  margin: 0 0 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--texto-suave);
+}
+
+.sem4p-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.sem4p-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6875rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sem4p-btn--primary {
+  color: var(--blanco);
+  background: var(--negro);
+  border: 1px solid var(--negro);
+}
+.sem4p-btn--primary:hover {
+  color: var(--rosa-500);
+  background: transparent;
+  border-color: var(--rosa-300);
+}
+.dark .sem4p-btn--primary {
+  color: var(--negro);
+  background: var(--blanco);
+  border-color: var(--blanco);
+}
+.dark .sem4p-btn--primary:hover {
+  color: var(--rosa-300);
+  background: transparent;
+  border-color: var(--rosa-300);
+}
+
+.sem4p-btn--secondary {
+  color: var(--texto-fuerte);
+  background: transparent;
+  border: 1px solid var(--borde);
+}
+.sem4p-btn--secondary:hover {
+  color: var(--rosa-500);
+  background: var(--rosa-100);
+  border-color: var(--rosa-300);
+}
+.dark .sem4p-btn--secondary:hover {
+  color: var(--rosa-300);
+  background: rgba(238, 168, 188, 0.08);
+}
+
+.sem4p-section { margin-bottom: 2.5rem; }
+
+.sem4p-preview {
+  overflow: hidden;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 0.875rem;
+  box-shadow: 0 12px 32px rgba(15, 15, 18, 0.06);
+}
+
+.sem4p-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 0.875rem;
+  background: var(--superficie-2);
+  border-bottom: 1px solid var(--borde);
+}
+
+.sem4p-preview-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+.sem4p-preview-dot:nth-child(1) { background: #f87171; }
+.sem4p-preview-dot:nth-child(2) { background: #fbbf24; }
+.sem4p-preview-dot:nth-child(3) { background: #4ade80; }
+
+.sem4p-preview-url {
+  flex: 1;
+  margin-left: 0.625rem;
+  font-size: 0.75rem;
+  color: var(--texto-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sem4p-preview-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  font-size: 0.6875rem;
+  color: var(--texto-suave);
+  background: transparent;
+  border: 1px solid var(--borde);
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.sem4p-preview-open:hover {
+  color: var(--rosa-500);
+  border-color: var(--rosa-300);
+}
+.dark .sem4p-preview-open:hover { color: var(--rosa-300); }
+
+.sem4p-preview-frame-wrap {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: var(--superficie-2);
+}
+@media (min-width: 768px) {
+  .sem4p-preview-frame-wrap { height: 640px; }
+}
+
+.sem4p-preview-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background: #ffffff;
+}
+
+.sem4p-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sem4p-stack-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--texto-fuerte);
+  background: var(--superficie-2);
+  border: 1px solid var(--borde);
+  border-radius: 9999px;
+  transition: border-color 0.2s ease;
+}
+.sem4p-stack-item:hover { border-color: var(--rosa-300); }
+
+.sem4p-team {
+  display: grid;
+  gap: 0.625rem;
+}
+@media (min-width: 640px) {
+  .sem4p-team { grid-template-columns: repeat(2, 1fr); }
+}
+
+.sem4p-team-member {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1rem;
+  background: var(--superficie-2);
+  border: 1px solid var(--borde);
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease;
+}
+.sem4p-team-member:hover { border-color: var(--rosa-300); }
+
+.sem4p-team-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--blanco);
+  background: var(--negro);
+  border-radius: 0.5rem;
+}
+.dark .sem4p-team-avatar {
+  color: var(--negro);
+  background: var(--blanco);
+}
+
+.sem4p-team-name {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--texto-fuerte);
+}
+
+.sem4p-team-role {
+  margin: 0.125rem 0 0;
+  font-size: 0.6875rem;
+  color: var(--texto-muted);
+}
+
+.sem4p-footer {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--borde);
+  display: flex;
+  justify-content: center;
+}

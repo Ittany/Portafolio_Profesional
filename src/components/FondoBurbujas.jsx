@@ -24,11 +24,11 @@ const FondoBurbujas = () => {
 
   const options = {
     background: {
-      color: { value: darkMode ? '#0f172a' : '#f0f9ff' },
+      color: { value: darkMode ? '#17131C' : '#FFEDFE' },
     },
     fpsLimit: 60,
     particles: {
-      color: { value: darkMode ? '#60a5fa' : '#3b82f6' },
+      color: { value: darkMode ? '#B99ACF' : '#FFA1FC' },
       move: {
         enable: true,
         speed: 0.5,
@@ -40,7 +40,7 @@ const FondoBurbujas = () => {
         value: darkMode ? 25 : 15,
       },
       opacity: {
-        value: darkMode ? 0.4 : 0.2,
+        value: darkMode ? 0.45 : 0.35,
         animation: {
           enable: true,
           speed: 0.5,
@@ -73,7 +73,7 @@ const FondoBurbujas = () => {
           distance: 250,
           size: 50,
           duration: 2,
-          opacity: darkMode ? 0.9 : 0.7,
+          opacity: darkMode ? 0.9 : 0.75,
         },
       },
     },

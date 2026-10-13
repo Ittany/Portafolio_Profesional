@@ -1,0 +1,201 @@
+/* ================================
+   PÁGINA TAREAS
+   ================================ */
+.tareas {
+  min-height: 100vh;
+  padding: 7rem 1rem 4rem;
+  font-family: system-ui, sans-serif;
+}
+
+.tareas-container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* Header */
+.tareas-header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.tareas-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.375rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #db2777;
+  background: rgba(236, 72, 153, 0.08);
+  border: 1px solid rgba(236, 72, 153, 0.22);
+  border-radius: 9999px;
+}
+.dark .tareas-eyebrow {
+  color: #f9a8d4;
+  background: rgba(236, 72, 153, 0.12);
+  border-color: rgba(244, 114, 182, 0.3);
+}
+
+.tareas-title {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #1e293b;
+}
+@media (min-width: 640px) { .tareas-title { font-size: 3rem; } }
+.dark .tareas-title { color: #f8fafc; }
+
+.tareas-divider {
+  width: 4rem;
+  height: 0.25rem;
+  margin: 1rem auto;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+}
+
+.tareas-subtitle {
+  max-width: 36rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #64748b;
+}
+.dark .tareas-subtitle { color: #cbd5e1; }
+
+/* Grid */
+.tareas-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 640px) { .tareas-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .tareas-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Card */
+.tareas-card {
+  display: block;
+  height: 100%;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(249, 168, 212, 0.35);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(20px);
+  text-decoration: none;
+  box-shadow: 0 12px 25px -8px rgba(236, 72, 153, 0.1);
+  transition: all 0.3s ease;
+}
+.tareas-card:hover {
+  border-color: #f472b6;
+  box-shadow: 0 20px 40px -10px rgba(236, 72, 153, 0.3);
+}
+.dark .tareas-card {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(244, 114, 182, 0.2);
+}
+.dark .tareas-card:hover { border-color: #f472b6; }
+
+.tareas-card--activa {
+  background: linear-gradient(135deg,
+    rgba(252, 231, 243, 0.9),
+    rgba(243, 232, 255, 0.9));
+  border-color: rgba(236, 72, 153, 0.5);
+}
+.dark .tareas-card--activa {
+  background: linear-gradient(135deg,
+    rgba(236, 72, 153, 0.12),
+    rgba(139, 92, 246, 0.12));
+  border-color: rgba(236, 72, 153, 0.5);
+}
+
+.tareas-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.tareas-card-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  border-radius: 0.875rem;
+  box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+}
+
+.tareas-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #be185d;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  border-radius: 9999px;
+}
+.dark .tareas-card-badge {
+  color: #f9a8d4;
+  background: rgba(15, 23, 42, 0.5);
+  border-color: rgba(244, 114, 182, 0.3);
+}
+
+.tareas-card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+.dark .tareas-card-title { color: #f8fafc; }
+
+.tareas-card-desc {
+  margin: 0 0 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: #64748b;
+}
+.dark .tareas-card-desc { color: #cbd5e1; }
+
+.tareas-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(249, 168, 212, 0.35);
+}
+.dark .tareas-card-footer { border-top-color: rgba(244, 114, 182, 0.2); }
+
+.tareas-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #db2777;
+  transition: gap 0.25s ease;
+}
+.tareas-card:hover .tareas-card-link {
+  gap: 0.75rem;
+  color: #7c3aed;
+}
+.dark .tareas-card-link { color: #f9a8d4; }
+.dark .tareas-card:hover .tareas-card-link { color: #c4b5fd; }
+
+.tareas-card-status {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
